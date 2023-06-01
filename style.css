@@ -1,0 +1,258 @@
+:root {
+  --Soft-orange: hsl(35, 77%, 62%);
+  --Soft-red: hsl(5, 85%, 63%);
+  --Off-white: hsl(36, 100%, 99%);
+  --Grayish-blue: hsl(233, 8%, 79%);
+  --Dark-grayish-blue: hsl(236, 13%, 42%);
+  --Very-dark-blue: hsl(240, 100%, 5%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--Off-white);
+  padding: 0 5rem;
+  color: var(--Very-dark-blue);
+}
+.hidden {
+  display: none;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+}
+
+a {
+  color: var(--Very-dark-blue);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--Soft-red);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  /* grid-template-rows: repeat(3, 1fr); */
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.big-panel {
+  grid-column: 1/3;
+}
+
+.big-panel img {
+  width: 100%;
+}
+
+.headline {
+  grid-column: 1;
+  font-weight: 800;
+  font-size: 1.5rem;
+  width: 300px;
+}
+
+
+.summary {
+  grid-column: 2/2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 90%;
+}
+.summary .btn {
+  width: 60%;
+  height: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  border: none;
+  background-color: var(--Soft-red);
+  color: var(--Off-white);
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: var(--Very-dark-blue);
+}
+
+.more-info {
+  grid-column: 3;
+  grid-row: 1/3;
+  background-color: var(--Very-dark-blue);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.more-info h2 {
+  color: var(--Soft-orange);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+hr {
+  height: 2px;
+  background-color: var(--Dark-grayish-blue);
+  border: none;
+}
+
+.more-info a {
+  color: var(--Off-white);
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+.more-info a:hover {
+  color: var(--Soft-orange);
+}
+
+.more-info p {
+  color: var(--Grayish-blue);
+  margin-bottom: 1rem;
+}
+
+.last-row {
+  display: flex;
+  gap: 1rem;
+}
+.last-row div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.last-row img {
+  max-width: 200px;
+  max-height: 100px;
+  width: auto;
+  height: auto;
+}
+.last-row span {
+  color: var(--Grayish-blue);
+  font-weight: bolder;
+  font-size: 1.5rem;
+}
+
+#content-one {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+#content-two {
+  grid-column: 2;
+  grid-row: 3;
+}
+#content-three {
+  grid-column: 3;
+  grid-row: 3;
+}
+
+p {
+  font-size: 15px;
+}
+
+.attribution {
+  margin-top: 2rem;
+  text-align: center;
+  border-top: 2px solid var(--Grayish-blue);
+}
+
+@media only screen and (max-width: 375px) {
+  body {
+    padding: 0;
+    position: relative;
+  }
+  .navbar {
+    position: fixed;
+    background-color: var(--Off-white);
+    width: 100vw;
+    padding: 1rem 10px;
+  }
+  .nav-btn {
+    border: none;
+    background: none;
+    display: flex;
+    justify-content: center;
+  }
+
+  .overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    background-color: #00000081;
+    backdrop-filter: blur(2px);
+  }
+
+  .navbar--mobile {
+    position: fixed;
+    z-index: 3;
+    width: 70%;
+    height: 100vh;
+    background-color: var(--Off-white);
+    right: 0;
+    border-radius: 30px 0 0 30px;
+    padding: 2rem;
+  }
+  .nav-btn--close {
+    position: absolute;
+    right: 0;
+    margin-right: 2rem;
+    display: flex;
+    background: none;
+    border: none;
+  }
+
+  .nav-links--mobile {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 40%;
+    gap: 1.5rem;
+  }
+
+  .content {
+    display: block;
+    padding: 10px;
+  }
+
+.headline {
+  width: 300px;
+  margin: 10px 0;
+}
+.headline h1 {
+  width: 100%;
+  word-wrap: break-word;
+}
+
+.summary {
+  width: 100%;
+  gap: 10px;
+}
+
+.more-info {
+  margin: 3rem 0;
+}
+
+.last-row {
+  margin-bottom: 2rem;
+}
+
+.hidden {
+  display: none;
+}
+}
